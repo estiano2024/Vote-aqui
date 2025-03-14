@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Resultados de votos</title>
+    <meta charset="UTF-8">
+    <script src="codigo.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <button class="confirmar" onclick="resultados()">Resultados</button>
+    <p id="resultado"></p>
+    <a href="index.html">Voltar</a>
+
+    <script>
+        fetch("resultado.php")
+            .then(response => response.text())
+            .then(data => document.getElementById("resultados").innerHTML = data)
+            .catch(error => console.error("Erro ao carregar resultados:", error));
+    </script>
+</body>
+
+</html>
